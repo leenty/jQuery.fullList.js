@@ -1,4 +1,4 @@
-/* 举个糖炒栗子
+﻿/* 举个糖炒栗子
  * var opts = {打包统一传入
  *  listItemClass: "fullListItem",列表填充时的模板的class，默认fullListItem
  *  fullListItemClass: "fullListItemData",模板内要填入的字段的class，默认fullListItemData
@@ -7,7 +7,7 @@
  * }
  * $(".fullListCon").fullList(opts);//".fullListCon"是要进行列表填充的父容器
  * 
- * {{[￥]+wxDiscountPrice+wxDiscountPrice>0.5+eval[[wxDiscountPrice]>0.5?$(this).css("color","#f00"):$(this).css("color","#0f0")]+eval[$(this).attr("src","[wxNickName]img/logo[wxNickName].png")]}}eg一个较复杂的列子
+ * {{"￥"$&[wxDiscountPrice]$&[wxDiscountPrice]>0.5+eval[[wxDiscountPrice]>0.5?$(this).css("color","#f00"):$(this).css("color","#0f0")]+eval[$(this).attr("src","[wxNickName]img/logo[wxNickName].png")]}}eg一个较复杂的列子
  * <img class="fullListItemData" data-fullDataName='{{eval[$(this).attr("src","img/logo.png");$(this).attr("abc","abc")]}}' />单标签的用法
  * 
  * html>>>
@@ -134,24 +134,3 @@ jQuery.fn.extend({
 		init();
 	}
 });
-
-// var evalfun=function(mm,$this){
-//	if(mm.indexOf("[")>=0&&mm.indexOf("]")>=1){
-//		mStr+=mm.slice(0,mm.indexOf("["));
-//		var evalStr="n."+mm.slice(mm.indexOf("[")+1,mm.indexOf("]"));
-//		if(opts.deBug){console.log("fullListEval[]函数处理：",evalStr);}
-//		mStr+="\""+eval(evalStr)+"\"";
-//		arguments.callee(mm.slice(mm.indexOf("]")+1),$this);
-//	}else{
-//		mStr+=mm.slice(mm.indexOf("]")+1);
-//		m=eval(mStr);
-//		typeof(m)=="object"?m="":m;
-//	}
-//};
-//$.each(mArr, function(j,n) {    
-//	n=n.slice(5,-1);
-//	n=n.replace(/\(this\)/g,"this");
-//	n=n.replace(/\*/g,"+");
-//	if(opts.deBug){console.log("fullListEval[]函数字符串预处理：",n);}
-//	evalfun(n,$this);
-//}
